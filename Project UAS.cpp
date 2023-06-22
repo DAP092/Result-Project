@@ -29,13 +29,22 @@ void tampil(){
 
 //pengerjaan "Enqueque" -> Mediana Nurlaili
 void enqueue(){
-    int n;
-    insert = new node;
-    insert->data = n;
-    insert->next = NULL;
-    tail = insert;
-
-    if (head == NULL;){
+    int input;
+    if (head == NULL){
+        head = new node;
+        cout<<"Masukan Data: ";
+        cin>>input;
+        head->data = input;
+        head->next = NULL;
+        tail = new node;
+    }
+    else{
+        tail->next=new node;
+        tail->next->data = input;
+        tail->next->next = head;
+        tail=tail->next;
+    }
+    cout<<endl;
 }
 
 //pengerjaan "Dequeue" -> Sulthon Febriawan
