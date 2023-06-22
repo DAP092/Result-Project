@@ -86,11 +86,53 @@ void clear(){
 
 //Membuat program menu "Queue Single Linked Circular List" -> Dimas Agus Prasetyo
 int main(){
-    enqueue();
-    dequeue();
-    tampil();
-    full();
-    empty();
-    clear();
+    char huruf;
+    short pil;
+
+    do{
+        system("cls");
+        cout<<"===================================================="<<endl;
+        cout<<"  Menu Program Queue single linked circular list    "<<endl;
+        cout<<"===================================================="<<endl;
+        cout<<"1. Enqueque"<<endl;
+        cout<<"2. Dequeue"<<endl;
+        cout<<"3. Tampil"<<endl;
+        cout<<"4. Full"<<endl;
+        cout<<"5. Empty"<<endl;
+        cout<<"6. Clear"<<endl;
+
+        cout<<"Masukan pilihan anda: ";
+        cin>>pil;
+
+        switch (pil){
+        case 1:
+            enqueue();
+            break;
+        
+        case 2:
+            dequeue();
+            break;
+        
+        case 3:
+            tampil();
+            break;
+        
+        case 4:
+            full();
+            break;
+
+        case 5:
+            empty();
+            break;
+
+        case 6:
+            clear();
+            break;
+        
+        default:
+            break;
+        }
+    }
+    while (pil !=5);
     system("pause");
 }
