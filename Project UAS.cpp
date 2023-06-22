@@ -29,7 +29,13 @@ void tampil(){
 
 //pengerjaan "Enqueque" -> Mediana Nurlaili
 void enqueue(){
+    int n;
+    insert = new node;
+    insert->data = n;
+    insert->next = NULL;
+    tail = insert;
 
+    if (head == NULL;){
 }
 
 //pengerjaan "Dequeue" -> Sulthon Febriawan
