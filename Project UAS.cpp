@@ -36,7 +36,6 @@ void enqueue(){
         cin>>input;
         head->data = input;
         head->next = NULL;
-        tail = new node;
     }
     else{
         tail->next=new node;
