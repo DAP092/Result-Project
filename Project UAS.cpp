@@ -132,6 +132,6 @@ int main(){
             break;
         }
     }
-    while (pil !=5);
+    while (pil !=7);
     system("pause");
 }
