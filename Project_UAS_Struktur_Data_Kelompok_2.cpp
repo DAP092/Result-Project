@@ -79,9 +79,9 @@ void full(){
             count++;
             current = current->next;
         }
-        while (count >= 10);
+        while (count >= 5);
     }
-    if (count >= 10){
+    if (count >= 5){
         cout<<"Linked list telah penuh."<<endl;
     }
     else{
