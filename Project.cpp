@@ -10,20 +10,22 @@ struct node{
     node *next;
 };
 
-node *head = NULL, *bantu, *hapus, *insert, *cari, *tail;
+node *head = NULL, *tail = NULL, *bantu, *hapus, *insert, *cari;
 int x;
 
-//pengerjaan "Tampil" -> Bagus Ari Sudamto
+//pengerjaan "Tampil" -> Bagus Ari Sudamto 
 void tampil(){
     if (head == NULL){
         cout<<"Linked list kosong"<<endl;
         return;
     }
     node *current = head;
-    while (current !=NULL){
+    cout<<"Isi linked list: ";
+    do{
         cout<<current->data<<" ";
-        current=current->next;
+        current = current->next;
     }
+    while (current != head);
     cout<<endl;
 }
 
@@ -44,6 +46,7 @@ void enqueue(){
         baru->next = head;
         tail = baru;
     }
+    tampil();
 }
 
 //pengerjaan "Dequeue" -> Sulthon Febriawan
@@ -71,9 +74,9 @@ void dequeue(){
 void full(){
     int bil;
     node *current = head;
-    while (current !=NULL){
+    while (current != NULL){
         bil++;
-        current=current->next;
+        current = current->next;
     }
     if (bil>=10){
         cout<<"Linked list telah penuh"<<endl;
@@ -81,7 +84,6 @@ void full(){
     else{
         cout<<"Linked list belum penuh"<<endl;
     }
-    
 }
 
 //pengerjaan "Empty" -> Dimas Agus Prasetyo
@@ -96,7 +98,21 @@ void empty(){
 
 //pengerjaan "Clear" -> Angga Pradipa
 void clear(){
-    
+    if (head ==  NULL){
+        cout<<"Linked List Sudah Kosong."<<endl;
+    }
+    else{
+        node *current = head;
+        while (current != tail){
+            node *temp = current;
+            current = current->next;
+            delete temp;
+        }
+        delete tail;
+        head = NULL;
+        tail = NULL;
+        cout<<"Linked list berhasil dikososngkan"<<endl;
+    }
 }
 
 //Membuat program menu "Queue Single Linked Circular List" -> Dimas Agus Prasetyo
@@ -105,7 +121,6 @@ int main(){
     short pil;
 
     do{
-        system("cls");
         cout<<"===================================================="<<endl;
         cout<<"   Menu Program Queue single linked circular list   "<<endl;
         cout<<"===================================================="<<endl;
@@ -149,5 +164,5 @@ int main(){
         }
     }
     while (pil !=7);
-    system("pause");
+    return 0;
 }
