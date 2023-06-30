@@ -29,32 +29,42 @@ void tampil(){
 
 //pengerjaan "Enqueque" -> Mediana Nurlaili
 void enqueue(){
-    int input;
+    node *baru;
+    baru = new node;
+    cout<<"masukan data: ";
+    cin>>baru->data;
+    baru->next = NULL;
     if (head == NULL){
-        head = new node;
-        cout<<"Masukan Data: ";
-        cin>>input;
-        head->data = input;
-        head->next = NULL;
+        head = baru;
+        head->next = head;
+        tail = head;
     }
     else{
-        tail = head;
-        while (tail->next !=head){
-            tail = tail->next;
-        }
-        tail->next = new node;
-        cout<<"Masukan data: ";
-        cin>>input;
-        tail->next->data = input;
-        tail->next->next = head;
-        tail = tail->next;
+        tail->next = baru;
+        baru->next = head;
+        tail = baru;
     }
-    cout<<endl;
 }
 
 //pengerjaan "Dequeue" -> Sulthon Febriawan
 void dequeue(){
-
+    if (head == NULL){
+        cout<<"Linked List Kosong"<<endl;
+        return;
+    }
+    else if (head == tail){
+        cout<<"data yang di-dequeque"<<head->data<<endl;
+        delete head;
+        head = NULL;
+        tail = NULL;
+    }
+    else{
+        node *temp = head;
+        cout<<"Data yang di-dequeue"<<head->data<<endl;
+        head = head->next;
+        tail->next = head;
+        delete temp;
+    }
 }
 
 //pengerjaan "Full" -> Ryanveno Pasha
