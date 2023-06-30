@@ -72,17 +72,20 @@ void dequeue(){
 
 //pengerjaan "Full" -> Ryanveno Pasha
 void full(){
-    int bil;
-    node *current = head;
-    while (current != NULL){
-        bil++;
-        current = current->next;
+    int count = 0;
+    if (head != NULL){
+        node *current = head;
+        do{
+            count++;
+            current = current->next;
+        }
+        while (count >= 10);
     }
-    if (bil>=10){
-        cout<<"Linked list telah penuh"<<endl;
+    if (count >= 10){
+        cout<<"Linked list telah penuh."<<endl;
     }
     else{
-        cout<<"Linked list belum penuh"<<endl;
+        cout<<"Linked list belum penuh."<<endl;
     }
 }
 
